@@ -2,6 +2,24 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/72411?language=java) 
 
+### 문제 풀이 후기
+입력 값에 따라 2개의 메뉴 코스, 3개의 메뉴 코스...를 구성해야 한다는 점에서 백트래킹을 사용하였다. 하지만, 백트래킹의 구성을 차용하였음에도 문제를 바로 풀이하지 못하였다.  
+
+가장 큰 문제점은 백트래킹의 핵심인 if 종료 조건에서 return을 하지 않았다.
+
+```java
+if(stack.size() == size){
+    Stack<String> cloneStack = (Stack<String>) stack.clone();
+    stacks.add(cloneStack);
+    return ;
+}
+```
+
+
+추가적인 문제점은 2개의 메뉴(a,b)의 cost를 구한 뒤, 3개의 메뉴(a,b,_) 내 a,b의 cost를 또 계산한다는 점이다.
+
+
+
 ### 성능 요약
 
 메모리: 235 MB, 시간: 1100.62 ms
